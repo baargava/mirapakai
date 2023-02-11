@@ -225,6 +225,8 @@ useEffect(()=>{
                    <div style={{width:"24rem",padding:10,position:"relative"}}>
                     
                     <p style={{fontSize:22}}>Your carts is empty</p>
+                  
+
                    </div>
                     
                               }
