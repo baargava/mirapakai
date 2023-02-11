@@ -7,9 +7,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import chilli from '../Images/chili-svgrepo-com.svg'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useSelector,useDispatch } from 'react-redux';
-import { DLT } from '../Redux/actions/actions';
+import { DLT,ADD,REMOVE} from '../Redux/actions/actions';
 import Menu from '@mui/material/Menu';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useNavigate, useParams } from 'react-router-dom'
+
 
 const Header = () => {
   const[mobileOpen,setMobileOpen]=useState(false)
@@ -29,10 +31,50 @@ const Header = () => {
     };
 
 
-    const dlt = (id)=>{
-        dispatch(DLT(id))
+   
+        
+    const [data,setData] = useState([]);
+    // console.log(data);
+  
+    const {id} = useParams();
+    // console.log(id);
+  
+    const history = useNavigate();
+  
+  
+    
+    
+  
+  
+    const compare = ()=>{
+      let comparedata = getdata.filter((e)=>{
+        return e.id == id
+      });
+      setData(comparedata);
     }
   
+    // add data
+    
+  
+    const send = (e)=>{
+      // console.log(e);
+      dispatch(ADD(e));
+    }
+    
+    const dlt = (id)=>{
+      dispatch(DLT(id));
+      history("/");
+  }
+  
+  // remove one
+  const remove = (item)=>{
+    dispatch(REMOVE(item))
+  }
+  
+  
+    useEffect(()=>{
+      compare();
+    },[id])
   //handleFunction
   const handleTrigger=()=>{
     setMobileOpen(!mobileOpen)
@@ -158,8 +200,13 @@ useEffect(()=>{
                                                         
                                                     </td>
 
-                                                    <td className='mt-5'style={{color:"red",fontSize:20,cursor:"pointer"}}  onClick={()=>dlt(e.id)}>
-                                                    <i ><DeleteIcon/></i>
+                                                    <td className='mt-5'style={{color:"red",fontSize:20,cursor:"pointer"}}  >
+                                                    <div  style={{width:100,cursor:"pointer",background:"#ddd",color:"#111",marginTop:'5',display:'flex',justifyContent:'center'}}>
+                    <span style={{fontSize:24}} onClick={e.qnty <=1 ? ()=>dlt(e.id) : ()=>remove(e)}>-</span>
+                    <span style={{fontSize:22}}>{e.qnty}</span>
+                    <span style={{fontSize:24}} onClick={()=>send(e)}>+</span>
+
+                    </div>
                                                     </td>
                                                 </tr>
                                             </>
