@@ -9,6 +9,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useSelector,useDispatch } from 'react-redux';
 import { DLT } from '../Redux/actions/actions';
 import Menu from '@mui/material/Menu';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Header = () => {
   const[mobileOpen,setMobileOpen]=useState(false)
@@ -158,7 +159,7 @@ useEffect(()=>{
                                                     </td>
 
                                                     <td className='mt-5'style={{color:"red",fontSize:20,cursor:"pointer"}}  onClick={()=>dlt(e.id)}>
-                                                    <i >X</i>
+                                                    <i ><DeleteIcon/></i>
                                                     </td>
                                                 </tr>
                                             </>

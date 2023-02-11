@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { DLT,ADD,REMOVE } from '../Redux/actions/actions'
 import './cartDetails.css'
 import { Card, CardActionArea,CardMedia,CardContent,Typography } from '@mui/material'
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const CartDetails = () => {
 
@@ -74,11 +75,17 @@ const remove = (item)=>{
     Dish:{ele.name} <br/>
     Price:{ele.price} <br/>  
     Quantity:{ele.qnty} <br/>
-    Total:{ele.price*ele.qnty}
-    </Typography>
-    <Typography component="body" variant='h5' gutterBottom>
+    Total:{ele.price*ele.qnty} <br/>
+    <div  style={{width:100,cursor:"pointer",background:"#ddd",color:"#111",marginTop:'5',display:'flex',justifyContent:'center'}}>
+                    <span style={{fontSize:24}} onClick={ele.qnty <=1 ? ()=>dlt(ele.id) : ()=>remove(ele)}>-</span>
+                    <span style={{fontSize:22}}>{ele.qnty}</span>
+                    <span style={{fontSize:24}} onClick={()=>send(ele)}>+</span>
+
+                    </div>
+                    <p><strong>Remove :</strong> <span ><i component onClick={()=>dlt(ele.id)} style={{color:"red",fontSize:20,cursor:"pointer"}}><DeleteIcon/></i>	</span></p>
 
     </Typography>
+    
   </CardContent>
       
       </CardActionArea>
