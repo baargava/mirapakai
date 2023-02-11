@@ -112,6 +112,7 @@ useEffect(()=>{
         <li>
           <NavLink to={"/contact"}>Contact</NavLink>
         </li>
+        
        
       </ul>
     </Box>
@@ -136,7 +137,9 @@ useEffect(()=>{
       
     <Typography color="goldenrod" variant="h6" component="div" sx={{flexGrow:1}}>
     <img src={chilli} alt='chilli' width='50px' height={'50px'}/>
-    Mirapakai</Typography>
+    Mirapakai
+    
+    </Typography>
     <Box sx={{display:{xs:'none',sm:'block'}}}>
       <ul className='nav__menu'>
         <li>
