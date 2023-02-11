@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Layout from '../components/layout/Layout'
 import banner from '../Images/banner.jpeg'
-import './HomeStyles.css'
+import './Homestyles.css'
 const Home = () => {
   return (
     <>
