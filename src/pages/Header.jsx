@@ -176,7 +176,7 @@ useEffect(()=>{
                 >  
                 {
                     getdata.length ? 
-                    <div className='card_details' style={{width:"24rem",padding:10}}>
+                    <div className='card_details' style={{width:"24rem",padding:'10',border:'1px solid black'}}>
                         <table>
                             <thead>
                                 <tr>
@@ -192,7 +192,7 @@ useEffect(()=>{
                                                 <tr>
                                                     <td>
                                                        <NavLink to={`/cart/${e.id}`}   onClick={handleClose}>
-                                                        <img src={e.image} style={{width:"5rem",height:"5rem"}} alt="" />
+                                                        <img src={e.image} style={{width:"8rem",height:"5rem"}} alt="" />
                                                         </NavLink>                                                    </td>
                                                     <td>
                                                         <p>{e.name}</p>
@@ -200,7 +200,7 @@ useEffect(()=>{
                                                         
                                                     </td>
 
-                                                    <td className='mt-5'style={{color:"red",fontSize:20,cursor:"pointer"}}  >
+                                                    <td className='mt-5'style={{color:"red",fontSize:20,cursor:"pointer"}} >
                                                     <div  style={{width:100,cursor:"pointer",background:"#ddd",color:"#111",marginTop:'5',display:'flex',justifyContent:'center'}}>
                     <span style={{fontSize:24}} onClick={e.qnty <=1 ? ()=>dlt(e.id) : ()=>remove(e)}>-</span>
                     <span style={{fontSize:22}}>{e.qnty}</span>
@@ -213,7 +213,9 @@ useEffect(()=>{
                                         )
                                     })
                                 }
-                                <p >Total :₹ {price}</p>
+                                <div style={{marginLeft:'3em'}}>
+                                <p style={{tmarginLeft:'0em',color:'white',backgroundColor:'red',}} >Total :₹ {price}</p>
+                                </div>
                             </tbody>
                         </table>
                     </div>:
