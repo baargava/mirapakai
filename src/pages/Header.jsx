@@ -146,7 +146,7 @@ useEffect(()=>{
           aria-controls={open ? 'basic-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined} onClick={handleClick}>
-    <ShoppingCartIcon  sx={{ marginLeft:'15em',fontSize:'25px',color:'white',display:{sm:"none"}}}/>
+    <ShoppingCartIcon  sx={{ marginLeft:'0em',fontSize:'25px',color:'white',display:{sm:"none"}}}/>
 {" "}
           </Badge>
    <Typography>
