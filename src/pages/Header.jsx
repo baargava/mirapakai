@@ -13,7 +13,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate, useParams } from 'react-router-dom'
 
 
-const Header = () => {
+const Header = (props) => {
   const[mobileOpen,setMobileOpen]=useState(false)
   const[price,setPrice]=useState(0)
 
@@ -90,6 +90,7 @@ const Header = () => {
 useEffect(()=>{
     total();
 },[total])
+
   
   //drawer
   const drawer =(
@@ -139,8 +140,8 @@ useEffect(()=>{
     <img src={chilli} alt='chilli' width='50px' height={'50px'}/>
     Mirapakai
     <Badge badgeContent={getdata.length} 
-                  id="basic-button"
-
+    sx={{display:{sm:"none"}}}
+               id="basic-button"
           color="primary"  
           aria-controls={open ? 'basic-menu' : undefined}
                         aria-haspopup="true"
