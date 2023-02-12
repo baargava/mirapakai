@@ -138,7 +138,18 @@ useEffect(()=>{
     <Typography color="goldenrod" variant="h6" component="div" sx={{flexGrow:1}}>
     <img src={chilli} alt='chilli' width='50px' height={'50px'}/>
     Mirapakai
-    
+    <Badge badgeContent={getdata.length} 
+                  id="basic-button"
+
+          color="primary"  
+          aria-controls={open ? 'basic-menu' : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? 'true' : undefined} onClick={handleClick}>
+    <ShoppingCartIcon  sx={{ marginLeft:'15em',fontSize:'25px',color:'white',display:{sm:"none"}}}/>
+{" "}
+          </Badge>
+   <Typography>
+    </Typography>
     </Typography>
     <Box sx={{display:{xs:'none',sm:'block'}}}>
       <ul className='nav__menu'>

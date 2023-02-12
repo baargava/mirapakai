@@ -5,6 +5,7 @@ import { DLT,ADD,REMOVE } from '../Redux/actions/actions'
 import './cartDetails.css'
 import { Card, CardActionArea,CardMedia,CardContent,Typography } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
+import Header from './Header'
 
 const CartDetails = () => {
 
@@ -55,6 +56,7 @@ const remove = (item)=>{
 
   return (
     <>
+    <Header/>
       <div className='conatiner' >
         <h2 >Iteams Details Page
         </h2>
