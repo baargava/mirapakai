@@ -41,7 +41,7 @@ const CartDetails = () => {
   
   const dlt = (id)=>{
     dispatch(DLT(id));
-    history("/");
+    history("/menu");
 }
 
 // remove one

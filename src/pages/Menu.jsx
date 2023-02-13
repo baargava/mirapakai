@@ -57,12 +57,7 @@ const remove = (item)=>{
     </Typography>
     <Typography component="body" variant='h5' gutterBottom>
       Price:{menu.price}  &nbsp; &nbsp;
-      <div  style={{width:100,cursor:"pointer",background:"#ddd",color:"#111",marginTop:'5',display:'flex',justifyContent:'center'}}>
-                    <span style={{fontSize:24}} onClick={menu.qnty <=1 ? ()=>dlt(menu.id) : ()=>remove(menu)}>-</span>
-                    <span style={{fontSize:22}}>{menu.qnty}</span>
-                    <span style={{fontSize:24}} onClick={()=>send(menu)}>+</span>
-
-                    </div>
+      
       
     </Typography>
     <Button variant='contained' onClick={()=> send(menu)}>Add To Cart</Button>
