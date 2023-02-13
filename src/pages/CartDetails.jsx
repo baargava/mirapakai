@@ -73,7 +73,7 @@ const remove = (item)=>{
   <CardContent style={{display:'flex'}}>
   <CardMedia component="img" src={ele.image} alt={ele.name} sx={{height:'260px',width:'350px'}}/>
 
-    <Typography component="h1" variant='h5' gutterBottom sx={{display:{xs:"flex"},flexDirection:"column"}}>
+    <Typography component="h1" variant='h5' gutterBottom sx={{display:{xs:"flex"},flexDirection:"row"}}>
     Dish:{ele.name} <br/>
     Price:{ele.price} <br/>  
     Quantity:{ele.qnty} <br/>
