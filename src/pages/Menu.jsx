@@ -4,7 +4,7 @@ import Layout from '../components/layout/Layout'
 import { MenuList } from '../data/MenuList'
 import {Link, NavLink} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import {ADD} from '../Redux/actions/actions'
+import {ADD,DLT,REMOVE} from '../Redux/actions/actions'
 import '../App.css'
 
 const Menu = () => {
@@ -25,7 +25,15 @@ const Menu = () => {
   const handleClose = () => {
       setAnchorEl(null);
   };
+  
+  const dlt = (id)=>{
+    dispatch(DLT(id));
+}
 
+// remove one
+const remove = (item)=>{
+  dispatch(REMOVE(item))
+}
   
   return (
     <>
@@ -49,7 +57,12 @@ const Menu = () => {
     </Typography>
     <Typography component="body" variant='h5' gutterBottom>
       Price:{menu.price}  &nbsp; &nbsp;
-      
+      <div  style={{width:100,cursor:"pointer",background:"#ddd",color:"#111",marginTop:'5',display:'flex',justifyContent:'center'}}>
+                    <span style={{fontSize:24}} onClick={menu.qnty <=1 ? ()=>dlt(menu.id) : ()=>remove(menu)}>-</span>
+                    <span style={{fontSize:22}}>{menu.qnty}</span>
+                    <span style={{fontSize:24}} onClick={()=>send(menu)}>+</span>
+
+                    </div>
       
     </Typography>
     <Button variant='contained' onClick={()=> send(menu)}>Add To Cart</Button>
