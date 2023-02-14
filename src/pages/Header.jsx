@@ -191,12 +191,12 @@ useEffect(()=>{
                 >  
                 {
                     getdata.length ? 
-                    <div className='card_details' style={{width:"24rem",padding:'10',border:'1px solid black'}}>
+                    <div className='card_details' style={{width:"24rem",padding:'1em',margin:'1.5em'}}>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Photo</th>
-                                    <th>Restaurant Name</th>
+                                    <td></td>
+                                    <td style={{fontSize:'20px'}}>CART</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -229,7 +229,7 @@ useEffect(()=>{
                                     })
                                 }
                                 <div style={{marginLeft:'3em'}}>
-                                <p style={{tmarginLeft:'0em',color:'white',backgroundColor:'red',}} >Total :₹ {price}</p>
+                                <p style={{marginLeft:'1.5em',color:'white',backgroundColor:'red',marginTop:'2em'}} >Total :₹ {price}</p>
                                 </div>
                             </tbody>
                         </table>
