@@ -71,7 +71,7 @@ const remove = (item)=>{
       <CardActionArea>
 
   <CardContent style={{display:'flex'}}>
-  <CardMedia component="img" src={ele.image} alt={ele.name} sx={{height:'260px',width:{xs:"280px",sm:"350px"}}}/>
+  <CardMedia component="img" src={ele.image} alt={ele.name} sx={{height:'260px',width:{xs:"180px",sm:"350px"}}}/>
 
     <Typography component="h1" variant='h5' gutterBottom >
     Dish:{ele.name} <br/>
