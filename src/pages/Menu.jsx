@@ -44,7 +44,7 @@ const remove = (item)=>{
       return(
         <Card sx={{maxWidth:'390px',display:'flex',m:2,justifyContent:'center'}}>
       <CardActionArea>
-      <NavLink to={`/cart/${menu.id}`}>
+      <NavLink to={`/cart/${menu.id}`} key={menu.id}>
        
         <CardMedia component='img' src={menu.image} alt={menu.name} sx={{minHeight:'400px'}}/>
         
