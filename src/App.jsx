@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import Home from './pages/Home'
 import About from './pages/About'
 import CartDetails from './pages/CartDetails'
+import Login from './pages/Login'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/menu' element={<Menu/>}/>
       <Route path='/cart/:id' element={<CartDetails />} />
+      <Route path='/login' element={<Login/>}/>
 
 
     </Routes>

@@ -19,7 +19,7 @@ const Header = (props) => {
 
   const getdata = useSelector((state)=> state.cartreducer.carts);
   console.log(getdata);
-
+const [isSignedIn,setIsSignedIn]=useState(true)
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -137,8 +137,8 @@ useEffect(()=>{
       </IconButton>
       
     <Typography color="goldenrod" variant="h6" component="div" sx={{flexGrow:1}}>
-    <img src={chilli} alt='chilli' width='50px' height={'50px'}/>
-    Mirapakai
+    <a href="/" style={{color:'goldenrod'}}><img src={chilli} alt='chilli' width='50px' height={'50px'}/>
+    Mirapakai </a>
     <Badge badgeContent={getdata.length} 
     sx={{display:{sm:"none"}}}
                id="basic-button"
@@ -155,16 +155,16 @@ useEffect(()=>{
     <Box sx={{display:{xs:'none',sm:'block'}}}>
       <ul className='nav__menu'>
         <li>
-          <NavLink activeClassName='active'  to={"/"}>Home</NavLink >
+          <NavLink activeClassName='active'  to={"/"} classname="link">Home</NavLink >
         </li>
         <li>
-          <NavLink  to={"/menu"}>Menu</NavLink >
+          <NavLink  to={"/menu"} classname="link">Menu</NavLink >
         </li>
         <li>
-          <NavLink  to={"/about"}>About</NavLink >
+          <NavLink  to={"/about"} classname="link">About</NavLink >
         </li>
         <li>
-          <NavLink  to={"/contact"}>Contact</NavLink >
+          <NavLink  to={"/contact"} classname="link">Contact</NavLink >
         </li> 
         <li>
           <Badge badgeContent={getdata.length} 
@@ -245,7 +245,13 @@ useEffect(()=>{
                    </div>
                     
                               }
+                             
                 </Menu>
+                <div>
+                              { isSignedIn?<button className='out_btn' onClick={()=>setIsSignedIn(false)}>LogOut</button>
+                              :<button className='in_btn' onClick={()=>history("/login")}>Login</button>}
+
+                              </div>
 
     </Toolbar>
     </AppBar>
